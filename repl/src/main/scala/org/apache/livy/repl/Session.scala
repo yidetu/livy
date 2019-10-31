@@ -58,7 +58,7 @@ class Session(
   import Session._
 
   private val interpreterExecutor = ExecutionContext.fromExecutorService(
-    Executors.newSingleThreadExecutor())
+    Executors.newFixedThreadPool(100))
 
   private val cancelExecutor = ExecutionContext.fromExecutorService(
     Executors.newSingleThreadExecutor())
